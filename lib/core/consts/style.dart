@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 abstract class AppConsts {
   static const Color backGroundColor = Color.fromRGBO(12, 12, 12, 1);
   static const Color buttonColor = Color.fromRGBO(173, 224, 41, 1);
-
+  static const Color grey = Colors.grey;
   static const Color greyBlackDarkColor = Color.fromRGBO(48, 48, 48, 1);
   static const Color greyBlackLightColor = Color.fromRGBO(155, 155, 155, 1);
   static const Color greyBlackVeryLightColor = Color.fromRGBO(232, 232, 232, 1);

@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 
 class FadeAnimation extends StatelessWidget {
-  const FadeAnimation(
-      {super.key, required this.child, required this.millSeconds});
+  const FadeAnimation({
+    super.key,
+    required this.child,
+    required this.millSeconds,
+  });
 
   final Widget child;
 
@@ -15,7 +18,7 @@ class FadeAnimation extends StatelessWidget {
       duration: Duration(milliseconds: millSeconds),
       builder: (context, angle, child) => AnimatedOpacity(
         opacity: angle,
-        duration: Duration(milliseconds: 250),
+        duration: const Duration(milliseconds: 250),
         child: child,
       ),
       child: child,

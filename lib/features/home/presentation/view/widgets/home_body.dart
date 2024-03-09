@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:slash_task/core/consts/style.dart';
 
@@ -9,6 +11,13 @@ class HomeBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // return const FadeAnimation(
+    //   millSeconds: 300,
+    //   child: FadingGridView(
+    //     scrollDirc: Axis.vertical,
+    //     widget: EmptyItem(),
+    //   ),
+    // );
     return AnimationLimiter(
       child: GridView.builder(
         gridDelegate: AppConsts.gridStyle,

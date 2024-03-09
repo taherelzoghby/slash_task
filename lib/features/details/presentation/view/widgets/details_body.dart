@@ -17,7 +17,6 @@ class DetailsBody extends StatelessWidget {
         const SwiperImages(),
         const AspectRatio(aspectRatio: AppConsts.aspect16on1),
         const SectionNamePriceBrand(),
-
         const AspectRatio(aspectRatio: AppConsts.aspect16on3),
       ],
     );

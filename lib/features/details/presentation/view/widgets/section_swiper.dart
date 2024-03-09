@@ -3,9 +3,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_swiper_view/flutter_swiper_view.dart';
 import 'package:slash_task/core/consts/data.dart';
 import 'package:slash_task/core/consts/style.dart';
+import 'package:slash_task/features/details/presentation/view/widgets/photo_view_widget.dart';
 import 'package:slash_task/features/details/presentation/view_model/change_image_cubit/change_image_cubit.dart';
-
-import 'custom_image_on_tap.dart';
+import 'package:slash_task/features/home/presentation/view/widgets/custom_product_image.dart';
 
 class SectionSwiper extends StatelessWidget {
   const SectionSwiper({super.key});
@@ -31,11 +31,16 @@ class SectionSwiper extends StatelessWidget {
             itemWidth: size.width * .8,
             itemHeight: size.height * .35,
             curve: Curves.easeIn,
+            onTap: (int val) => Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (_) => PhotoViewWidget(ind: val),
+              ),
+            ),
             onIndexChanged: (int value) => bloc.changeIndex(
               value: value,
             ),
             itemBuilder: (context, index) {
-              return CustomImageOnTap(
+              return CustomProductImage(
                 image: items[index],
               );
             },

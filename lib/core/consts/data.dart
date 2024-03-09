@@ -9,3 +9,9 @@ List<String> colors = [
   '71D79A',
   '000000',
 ];
+List<String> sizes = [
+  'small',
+  'Medium',
+  'Large',
+  'X Large',
+];

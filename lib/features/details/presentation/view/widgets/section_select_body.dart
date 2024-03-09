@@ -1,12 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:slash_task/core/consts/strings.dart';
 import 'package:slash_task/core/consts/style.dart';
 
-import 'section_color_list_view.dart';
+import 'section_list_view.dart';
 
-class SectionColor extends StatelessWidget {
-  const SectionColor({super.key});
+class SectionSelectBody extends StatelessWidget {
+  const SectionSelectBody({
+    super.key,
+    required this.label,
+    required this.body,
+  });
+
+  final String label;
+  final Widget body;
 
   @override
   Widget build(BuildContext context) {
@@ -15,13 +21,13 @@ class SectionColor extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Text(
-            StringsEn.selectColor,
+          Text(
+            label,
             style: AppConsts.style17w600,
             overflow: TextOverflow.ellipsis,
           ),
           SizedBox(height: MediaQuery.sizeOf(context).height * .01),
-          const SectionColorListView()
+          SectionListView(widget: body),
         ],
       ),
     );

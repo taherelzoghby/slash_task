@@ -21,17 +21,10 @@ class ColorsListView extends StatelessWidget {
           shrinkWrap: true,
           scrollDirection: Axis.horizontal,
           itemBuilder: (context, index) {
-            return InkWell(
+            return ItemColor(
               onTap: () => bloc.changeColor(index),
-              borderRadius: AppConsts.radius25,
-              child: ItemColor(
-                color: colors[index],
-                isActive: bloc.ind == index,
-              ),
-              // child: ItemImageIndicator(
-              //   isActive: bloc.ind == index,
-              //   image: images[index],
-              // ),
+              color: colors[index],
+              isActive: bloc.ind == index,
             );
           },
           itemCount: colors.length,

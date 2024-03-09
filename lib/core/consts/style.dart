@@ -9,6 +9,7 @@ abstract class AppConsts {
   static const Color greyBlackVeryLightColor = Color.fromRGBO(232, 232, 232, 1);
   static const Color white = Colors.white;
   static const Color success = Color.fromRGBO(143, 220, 96, 1);
+
   //aspect ratio
   static const double aspect16on2 = 16 / 2;
   static const double aspect16on14 = 16 / 14;
@@ -58,6 +59,10 @@ abstract class AppConsts {
   static BorderRadius radius100 = BorderRadius.circular(100);
 
 //styles
+  static const TextStyle style28 = TextStyle(
+    fontSize: 28,
+    fontWeight: FontWeight.w600,
+  );
   static const List<BoxShadow> buttonShadow = [
     BoxShadow(
       color: AppConsts.white,

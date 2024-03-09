@@ -13,8 +13,8 @@ class ProductStatusLookups {
 
   factory ProductStatusLookups.fromMap(Map<String, dynamic> data) {
     return ProductStatusLookups(
-      id: data['id'] as int?,
-      name: data['name'] as String?,
+      id: (data['id'] as int?) ?? 0,
+      name: (data['name'] as String?) ?? '',
       createdAt: data['createdAt'] == null
           ? null
           : DateTime.parse(data['createdAt'] as String),

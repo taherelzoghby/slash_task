@@ -6,6 +6,7 @@ import 'package:slash_task/core/consts/style.dart';
 
 import 'colors_list_view.dart';
 import 'materials_list_view.dart';
+import 'section_description.dart';
 import 'section_select_body.dart';
 import 'section_name_price_brand.dart';
 import 'sizes_list_view.dart';
@@ -42,6 +43,9 @@ class DetailsBody extends StatelessWidget {
           label: StringsEn.selectMaterial,
           body: MaterialsListView(),
         ),
+        AspectRatio(aspectRatio: AppConsts.aspect16on1),
+        //description
+        SectionDescription(),
         AspectRatio(aspectRatio: AppConsts.aspect16on3),
       ],
     );

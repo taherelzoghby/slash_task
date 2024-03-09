@@ -13,6 +13,7 @@ abstract class StringsEn {
   static const String selectSize = 'Select Size';
   static const String selectMaterial = 'Select Material';
   static const String perfixColor = '0xFF';
+  static const String description = 'Discription';
 }
 
 ///strings by arabic

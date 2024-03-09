@@ -11,7 +11,7 @@ class SwiperImages extends StatelessWidget {
     return const Column(
       children: [
         SectionSwiper(),
-        SectionImagesIndicator(),
+        SectionImagesIndicatorListView(),
       ],
     );
   }

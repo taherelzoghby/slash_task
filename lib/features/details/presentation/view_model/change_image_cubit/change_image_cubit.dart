@@ -5,8 +5,10 @@ part 'change_image_state.dart';
 
 class ChangeImageCubit extends Cubit<ChangeImageState> {
   ChangeImageCubit() : super(ChangeImageInitial());
+  int index = 0;
 
   changeIndex({required int value}) {
-    emit(Changed(value: value));
+    index = value;
+    emit(Changed(value: index));
   }
 }

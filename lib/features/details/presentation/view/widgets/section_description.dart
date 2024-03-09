@@ -1,6 +1,5 @@
-import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:slash_task/core/consts/style.dart';
 
 import 'description_bar.dart';
@@ -11,21 +10,18 @@ class SectionDescription extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: AppConsts.mainPadding,
-      child: Container(
-        decoration: BoxDecoration(
-          color: AppConsts.greyBlackDarkColor,
-          borderRadius: AppConsts.radius15,
-        ),
-        child:  const Padding(
-          padding: AppConsts.allPadding8,
-          child: Column(
-            children: [
-              DescriptionBar(),
-              SectionDiscBlocConsumer(),
-            ],
-          ),
+    return Container(
+      decoration: BoxDecoration(
+        color: AppConsts.greyBlackDarkColor,
+        borderRadius: AppConsts.radius15,
+      ),
+      child:  const Padding(
+        padding: AppConsts.allPadding8,
+        child: Column(
+          children: [
+            DescriptionBar(),
+            SectionDiscBlocConsumer(),
+          ],
         ),
       ),
     );

@@ -16,20 +16,17 @@ class SectionSelectBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: AppConsts.mainPadding,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            label,
-            style: AppConsts.style17w600,
-            overflow: TextOverflow.ellipsis,
-          ),
-          SizedBox(height: MediaQuery.sizeOf(context).height * .01),
-          SectionListView(widget: body),
-        ],
-      ),
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          label,
+          style: AppConsts.style17w600,
+          overflow: TextOverflow.ellipsis,
+        ),
+        SizedBox(height: MediaQuery.sizeOf(context).height * .01),
+        SectionListView(widget: body),
+      ],
     );
   }
 }

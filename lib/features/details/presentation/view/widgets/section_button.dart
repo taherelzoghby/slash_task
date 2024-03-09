@@ -9,14 +9,11 @@ class SectionButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: AppConsts.mainPadding,
-      child: AspectRatio(
-        aspectRatio: AppConsts.aspectRatioButtonAuth,
-        child: CustomButton(
-          text: StringsEn.addToCart,
-          onTap: () {},
-        ),
+    return AspectRatio(
+      aspectRatio: AppConsts.aspectRatioButtonAuth,
+      child: CustomButton(
+        text: StringsEn.addToCart,
+        onTap: () {},
       ),
     );
   }

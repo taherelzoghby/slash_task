@@ -13,7 +13,7 @@ class SectionBrand extends StatelessWidget {
         CircleAvatar(
           radius: size.height * .04,
           backgroundColor: AppConsts.white,
-          foregroundImage: NetworkImage(items[0]),
+          foregroundImage: NetworkImage(images[0]),
         ),
         SizedBox(height: size.height *.01),
         Text(

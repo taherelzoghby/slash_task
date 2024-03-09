@@ -11,7 +11,7 @@ class SectionNamePriceBrand extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Padding(
-      padding: AppConsts.paddH12,
+      padding: AppConsts.mainPadding,
       child: Row(
         children: [
           Expanded(

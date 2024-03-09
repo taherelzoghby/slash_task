@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:slash_task/core/consts/style.dart';
 
@@ -16,12 +15,12 @@ class SectionNamePrice extends StatelessWidget {
             fontSize: 22,
           ),
         ),
-        SizedBox(height: MediaQuery.sizeOf(context).height *.01),
+        SizedBox(height: MediaQuery.sizeOf(context).height * .01),
         const Text(
           'EGP 354',
           style: AppConsts.style17w600,
           overflow: TextOverflow.ellipsis,
-        )
+        ),
       ],
     );
   }

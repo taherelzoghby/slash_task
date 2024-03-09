@@ -28,11 +28,11 @@ class _PhotoViewWidgetState extends State<PhotoViewWidget> {
       scrollPhysics: const BouncingScrollPhysics(),
       builder: (BuildContext context, int index) {
         return PhotoViewGalleryPageOptions(
-          imageProvider: NetworkImage(items[index]),
+          imageProvider: NetworkImage(images[index]),
           initialScale: PhotoViewComputedScale.contained * 0.8,
         );
       },
-      itemCount: items.length,
+      itemCount: images.length,
       loadingBuilder: (context, event) => const LoadingWidget(),
       pageController: controller,
     );

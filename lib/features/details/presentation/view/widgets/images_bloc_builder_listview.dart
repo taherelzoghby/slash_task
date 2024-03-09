@@ -24,11 +24,11 @@ class ImagesBlocBuilderListView extends StatelessWidget {
               borderRadius: AppConsts.radius8,
               child: ItemImageIndicator(
                 isActive: index == bloc.index,
-                image: items[index],
+                image: images[index],
               ),
             );
           },
-          itemCount: items.length,
+          itemCount: images.length,
         );
       },
     );

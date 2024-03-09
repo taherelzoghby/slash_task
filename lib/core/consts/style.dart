@@ -35,7 +35,6 @@ abstract class AppConsts {
   static const double halfScreenHeight = 565;
 
   //padding
-  static const EdgeInsets mainPadding = EdgeInsets.symmetric(horizontal: 15);
   static const EdgeInsets passing25 = EdgeInsets.symmetric(horizontal: 25);
   static const EdgeInsets padding10Horiz = EdgeInsets.symmetric(horizontal: 10);
   static const EdgeInsets padding10h8v = EdgeInsets.symmetric(
@@ -51,7 +50,7 @@ abstract class AppConsts {
   );
   static const EdgeInsets topPadding20 = EdgeInsets.only(top: 20);
   static const EdgeInsets paddH40 = EdgeInsets.symmetric(horizontal: 40);
-  static const EdgeInsets paddH12 = EdgeInsets.symmetric(horizontal: 12);
+  static const EdgeInsets mainPadding = EdgeInsets.symmetric(horizontal: 12);
 
 //radius
   static BorderRadius radius8 = BorderRadius.circular(8);

@@ -9,6 +9,8 @@ abstract class StringsEn {
   static const String svg = 'svg';
   static const String https = 'https';
   static const String network = 'network';
+  static const String selectColor ='Select Color';
+  static const String perfixColor = '0xFF';
 }
 
 ///strings by arabic

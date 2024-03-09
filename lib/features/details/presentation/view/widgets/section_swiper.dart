@@ -41,10 +41,10 @@ class SectionSwiper extends StatelessWidget {
             ),
             itemBuilder: (context, index) {
               return CustomProductImage(
-                image: items[index],
+                image: images[index],
               );
             },
-            itemCount: items.length,
+            itemCount: images.length,
             controller: bloc.controller,
           ),
         );

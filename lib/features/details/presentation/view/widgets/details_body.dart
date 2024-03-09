@@ -1,9 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_swiper_view/flutter_swiper_view.dart';
-import 'package:slash_task/core/consts/data.dart';
 import 'package:slash_task/core/consts/style.dart';
-import 'package:slash_task/features/home/presentation/view/widgets/custom_product_image.dart';
 
 import 'swiper_image.dart';
 

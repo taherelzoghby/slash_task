@@ -13,6 +13,7 @@ class CustomProductImage extends StatelessWidget {
       decoration: BoxDecoration(
         color: AppConsts.white,
         borderRadius: AppConsts.radius25,
+        boxShadow: AppConsts.imageShadow,
       ),
       child: ClipRRect(
         borderRadius: AppConsts.radius25,

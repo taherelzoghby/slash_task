@@ -22,6 +22,7 @@ class SwiperImages extends StatelessWidget {
           ..addTranslate(AppConsts.translateOffSet),
         itemWidth: size.width * .8,
         itemHeight: size.height * .35,
+        curve: Curves.easeIn,
         itemBuilder: (context, index) {
           return CustomImageOnTap(image: items[index]);
         },

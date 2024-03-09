@@ -74,6 +74,14 @@ abstract class AppConsts {
       offset: Offset(0, 1.5),
     ),
   ];
+  static const List<BoxShadow> imageShadow = [
+    BoxShadow(
+      color: AppConsts.backGroundColor,
+      offset: Offset(0, 0),
+      blurRadius: 7,
+      spreadRadius: 1,
+    ),
+  ];
 
   //decorations
   static BoxDecoration decorationCircleImage = BoxDecoration(

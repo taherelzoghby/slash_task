@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_swiper_view/flutter_swiper_view.dart';
 import 'package:slash_task/core/consts/style.dart';
-import 'package:slash_task/features/home/presentation/view/widgets/custom_product_image.dart';
-
 import '../../../../../core/consts/data.dart';
+import 'custom_image_on_tap.dart';
 
 class SwiperImages extends StatelessWidget {
   const SwiperImages({super.key});
@@ -11,7 +10,6 @@ class SwiperImages extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.sizeOf(context);
-
     return AspectRatio(
       aspectRatio: AppConsts.aspect16on14,
       child: Swiper(
@@ -25,12 +23,7 @@ class SwiperImages extends StatelessWidget {
         itemWidth: size.width * .8,
         itemHeight: size.height * .35,
         itemBuilder: (context, index) {
-          return Padding(
-            padding: AppConsts.allPadding8,
-            child: CustomProductImage(
-              image: items[index],
-            ),
-          );
+          return CustomImageOnTap(image: items[index]);
         },
         itemCount: items.length,
       ),

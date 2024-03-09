@@ -1,8 +1,7 @@
-
 import 'package:flutter/material.dart';
-import 'package:slash_task/core/consts/strings.dart';
-import 'package:slash_task/core/consts/style.dart';
-import 'package:slash_task/core/widgets/customButton.dart';
+import '../../../../../core/consts/strings.dart';
+import '../../../../../core/consts/style.dart';
+import '../../../../../core/widgets/customButton.dart';
 
 class SectionButton extends StatelessWidget {
   const SectionButton({super.key});

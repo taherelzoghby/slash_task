@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_swiper_view/flutter_swiper_view.dart';
-import 'package:slash_task/core/consts/data.dart';
-import 'package:slash_task/core/consts/style.dart';
-import 'package:slash_task/features/details/presentation/view/widgets/photo_view_widget.dart';
-import 'package:slash_task/features/details/presentation/view_model/change_image_cubit/change_image_cubit.dart';
-import 'package:slash_task/features/home/presentation/view/widgets/custom_product_image.dart';
+
+import '../../../../../core/consts/data.dart';
+import '../../../../../core/consts/style.dart';
+import '../../../../home/presentation/view/widgets/custom_product_image.dart';
+import '../../view_model/change_image_cubit/change_image_cubit.dart';
+import 'photo_view_widget.dart';
 
 class SectionSwiper extends StatelessWidget {
   const SectionSwiper({super.key});

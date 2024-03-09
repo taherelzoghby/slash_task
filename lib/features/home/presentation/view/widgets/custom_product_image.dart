@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:slash_task/core/consts/style.dart';
-import 'package:slash_task/core/helper/handle_image.dart';
+import '../../../../../core/consts/style.dart';
+import '../../../../../core/helper/handle_image.dart';
 
 class CustomProductImage extends StatelessWidget {
   const CustomProductImage({

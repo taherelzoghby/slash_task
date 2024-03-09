@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:slash_task/core/consts/data.dart';
-import 'package:slash_task/features/details/presentation/view_model/change_material_cubit/change_material_cubit.dart';
+
+import '../../../../../core/consts/data.dart';
+import '../../view_model/change_material_cubit/change_material_cubit.dart';
 import 'item_size.dart';
 
 class MaterialsListView extends StatelessWidget {

@@ -1,7 +1,6 @@
-
 import 'package:flutter/material.dart';
-import 'package:slash_task/core/consts/style.dart';
 
+import '../consts/style.dart';
 import 'empty_component.dart';
 
 class EmptyItem extends StatelessWidget {

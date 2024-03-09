@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:slash_task/core/consts/style.dart';
 
+import '../../../../../core/consts/style.dart';
 import 'section_list_view.dart';
 
 class SectionSelectBody extends StatelessWidget {

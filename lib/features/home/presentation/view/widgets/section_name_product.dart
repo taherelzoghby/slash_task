@@ -1,6 +1,5 @@
-
 import 'package:flutter/material.dart';
-import 'package:slash_task/core/consts/style.dart';
+import '../../../../../core/consts/style.dart';
 
 import 'custom_product_image.dart';
 
@@ -25,7 +24,7 @@ class SectionNameProduct extends StatelessWidget {
             decoration: AppConsts.decorationCircleImage,
             child: CustomProductImage(
               image:
-              'https://media.licdn.com/dms/image/D4D0BAQGb0kJhmbmWUQ/company-logo_200_200/0/1697913303367/slash_creators_logo?e=2147483647&v=beta&t=Jh3Z4mxxHkTHNTN9Ezn38qBp14QTB8knec_DDhUWMdI',
+                  'https://media.licdn.com/dms/image/D4D0BAQGb0kJhmbmWUQ/company-logo_200_200/0/1697913303367/slash_creators_logo?e=2147483647&v=beta&t=Jh3Z4mxxHkTHNTN9Ezn38qBp14QTB8knec_DDhUWMdI',
             ),
           ),
         ),

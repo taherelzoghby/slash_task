@@ -1,6 +1,6 @@
-
 import 'package:flutter/material.dart';
-import 'package:slash_task/core/consts/style.dart';
+
+import '../consts/style.dart';
 
 class EmptyComponent extends StatelessWidget {
   const EmptyComponent({super.key});

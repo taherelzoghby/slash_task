@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:photo_view/photo_view.dart';
 import 'package:photo_view/photo_view_gallery.dart';
-import 'package:slash_task/core/consts/data.dart';
-import 'package:slash_task/core/widgets/loading_widget.dart';
+import '../../../../../core/consts/data.dart';
+import '../../../../../core/widgets/loading_widget.dart';
 
 class PhotoViewWidget extends StatefulWidget {
   const PhotoViewWidget({super.key, required this.ind});

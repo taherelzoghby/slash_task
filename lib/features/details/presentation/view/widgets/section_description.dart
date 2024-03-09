@@ -1,6 +1,5 @@
-
 import 'package:flutter/material.dart';
-import 'package:slash_task/core/consts/style.dart';
+import '../../../../../core/consts/style.dart';
 
 import 'description_bar.dart';
 import 'section_disc_bloc_consumer.dart';
@@ -15,7 +14,7 @@ class SectionDescription extends StatelessWidget {
         color: AppConsts.greyBlackDarkColor,
         borderRadius: AppConsts.radius15,
       ),
-      child:  const Padding(
+      child: const Padding(
         padding: AppConsts.allPadding8,
         child: Column(
           children: [

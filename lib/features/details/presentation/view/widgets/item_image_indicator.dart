@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:slash_task/core/consts/style.dart';
-import 'package:slash_task/core/helper/handle_image.dart';
+import '../../../../../core/consts/style.dart';
+import '../../../../../core/helper/handle_image.dart';
 
 class ItemImageIndicator extends StatelessWidget {
   const ItemImageIndicator({
     super.key,
     required this.image,
-    required this.isActive, this.onTap,
+    required this.isActive,
+    this.onTap,
   });
 
   final String image;

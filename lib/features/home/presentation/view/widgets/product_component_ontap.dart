@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:slash_task/core/consts/routesPage.dart';
-import 'package:slash_task/core/consts/style.dart';
+import '../../../../../core/consts/routesPage.dart';
+import '../../../../../core/consts/style.dart';
 
 import 'product_component.dart';
 

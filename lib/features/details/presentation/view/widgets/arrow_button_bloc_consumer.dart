@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:slash_task/features/details/presentation/view_model/arrow_cubit/arrow_disc_cubit.dart';
+import '../../view_model/arrow_cubit/arrow_disc_cubit.dart';
 
 class ArrowButtonBlocConsumer extends StatefulWidget {
   const ArrowButtonBlocConsumer({super.key});
 
   @override
-  State<ArrowButtonBlocConsumer> createState() => _ArrowButtonBlocConsumerState();
+  State<ArrowButtonBlocConsumer> createState() =>
+      _ArrowButtonBlocConsumerState();
 }
 
 class _ArrowButtonBlocConsumerState extends State<ArrowButtonBlocConsumer> {

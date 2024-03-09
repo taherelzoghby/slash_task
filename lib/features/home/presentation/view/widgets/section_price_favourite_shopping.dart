@@ -1,6 +1,5 @@
-
 import 'package:flutter/material.dart';
-import 'package:slash_task/core/consts/style.dart';
+import '../../../../../core/consts/style.dart';
 
 class SectionPriceFavouriteShopping extends StatelessWidget {
   const SectionPriceFavouriteShopping({super.key});

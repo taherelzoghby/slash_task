@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:slash_task/core/consts/style.dart';
+
+import '../consts/style.dart';
 
 showSnack(
   BuildContext context, {

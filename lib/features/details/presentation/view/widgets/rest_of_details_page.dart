@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:slash_task/core/consts/strings.dart';
-import 'package:slash_task/core/consts/style.dart';
+import '../../../../../core/consts/strings.dart';
+import '../../../../../core/consts/style.dart';
 
 import 'colors_list_view.dart';
 import 'materials_list_view.dart';

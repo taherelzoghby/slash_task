@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:slash_task/core/consts/data.dart';
-import 'package:slash_task/core/consts/style.dart';
+import '../../../../../core/consts/data.dart';
+import '../../../../../core/consts/style.dart';
 
 class SectionBrand extends StatelessWidget {
   const SectionBrand({super.key});
@@ -15,7 +15,7 @@ class SectionBrand extends StatelessWidget {
           backgroundColor: AppConsts.white,
           foregroundImage: NetworkImage(images[0]),
         ),
-        SizedBox(height: size.height *.01),
+        SizedBox(height: size.height * .01),
         Text(
           'Libra sports',
           style: AppConsts.style17w600,

@@ -24,6 +24,7 @@ class ItemImageIndicator extends StatelessWidget {
           boxShadow: AppConsts.imageShadow,
           border: Border.all(
             color: isActive ? AppConsts.success : AppConsts.white,
+            width: 2,
           ),
         ),
         child: ClipRRect(

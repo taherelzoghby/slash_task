@@ -24,7 +24,6 @@ abstract class AppConsts {
   static const double aspect40on1 = 40 / 1;
   static const double aspect300on1 = 300 / 1;
   static const double aspectRatioButtonAuth = 3 / .4;
-  static const double aspectRatioButtonApply = 2.1 / .65;
   static const double aspect13on8 = 13 / 8;
   static const double aspect13on9 = 13 / 9;
   static const double aspect13on10 = 13 / 10;
@@ -76,7 +75,9 @@ abstract class AppConsts {
   static const List<BoxShadow> buttonShadow = [
     BoxShadow(
       color: AppConsts.white,
-      offset: Offset(0, 1.5),
+      offset: Offset(0, 2.5),
+      blurRadius: 5,
+      spreadRadius: 1,
     ),
   ];
   static const List<BoxShadow> imageShadow = [

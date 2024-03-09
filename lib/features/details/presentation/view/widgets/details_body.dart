@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:slash_task/core/consts/strings.dart';
 import 'package:slash_task/core/consts/style.dart';
+import 'package:slash_task/features/details/presentation/view/widgets/section_button.dart';
 
 import 'colors_list_view.dart';
 import 'materials_list_view.dart';
@@ -46,6 +47,9 @@ class DetailsBody extends StatelessWidget {
         AspectRatio(aspectRatio: AppConsts.aspect16on1),
         //description
         SectionDescription(),
+        AspectRatio(aspectRatio: AppConsts.aspect16on1),
+        //add to cart
+        SectionButton(),
         AspectRatio(aspectRatio: AppConsts.aspect16on3),
       ],
     );

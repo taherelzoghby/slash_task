@@ -19,13 +19,10 @@ class ImagesBlocBuilderListView extends StatelessWidget {
           shrinkWrap: true,
           scrollDirection: Axis.horizontal,
           itemBuilder: (context, index) {
-            return InkWell(
+            return ItemImageIndicator(
               onTap: () => bloc.changeIndex(value: index),
-              borderRadius: AppConsts.radius8,
-              child: ItemImageIndicator(
-                isActive: index == bloc.index,
-                image: images[index],
-              ),
+              isActive: index == bloc.index,
+              image: images[index],
             );
           },
           itemCount: images.length,

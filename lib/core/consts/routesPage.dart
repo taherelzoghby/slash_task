@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:slash_task/features/details/presentation/view/details_view.dart';
 import 'package:slash_task/features/details/presentation/view_model/change_color_cubit/change_color_or_image_cubit.dart';
 import 'package:slash_task/features/details/presentation/view_model/change_image_cubit/change_image_cubit.dart';
+import 'package:slash_task/features/details/presentation/view_model/change_material_cubit/change_material_cubit.dart';
 import 'package:slash_task/features/details/presentation/view_model/change_size_cubit/change_size_cubit.dart';
 import 'package:slash_task/features/home/presentation/view/home_view.dart';
 
@@ -35,6 +36,9 @@ final router = GoRouter(
             ),
             BlocProvider(
               create: (_) => ChangeSizeCubit(),
+            ),
+            BlocProvider(
+              create: (_) => ChangeMaterialCubit(),
             ),
           ],
           child: const DetailsView(),

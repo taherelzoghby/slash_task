@@ -17,12 +17,12 @@ class ItemColor extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     int value = int.parse('${StringsEn.perfixColor}$color');
-    return InkWell(
-      onTap: onTap,
-      borderRadius: AppConsts.radius25,
-      child: Center(
-        child: Padding(
-          padding: AppConsts.padd4h,
+    return Padding(
+      padding: AppConsts.padd4h,
+      child: InkWell(
+        onTap: onTap,
+        borderRadius: AppConsts.radius25,
+        child: Center(
           child: Container(
             decoration: BoxDecoration(
               borderRadius: AppConsts.radius40,

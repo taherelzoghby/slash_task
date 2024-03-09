@@ -6,30 +6,35 @@ class ItemImageIndicator extends StatelessWidget {
   const ItemImageIndicator({
     super.key,
     required this.image,
-    required this.isActive,
+    required this.isActive, this.onTap,
   });
 
   final String image;
   final bool isActive;
+  final void Function()? onTap;
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: AppConsts.padd4h,
-      child: Container(
-        width: 50,
-        decoration: BoxDecoration(
-          color: AppConsts.white,
-          borderRadius: AppConsts.radius8,
-          boxShadow: AppConsts.imageShadow,
-          border: Border.all(
-            color: isActive ? AppConsts.success : AppConsts.white,
-            width: 2,
+      child: InkWell(
+        onTap: onTap,
+        borderRadius: AppConsts.radius8,
+        child: Container(
+          width: 50,
+          decoration: BoxDecoration(
+            color: AppConsts.white,
+            borderRadius: AppConsts.radius8,
+            boxShadow: AppConsts.imageShadow,
+            border: Border.all(
+              color: isActive ? AppConsts.success : AppConsts.white,
+              width: 2,
+            ),
           ),
-        ),
-        child: ClipRRect(
-          borderRadius: AppConsts.radius8,
-          child: HandleImageWidget(image: image),
+          child: ClipRRect(
+            borderRadius: AppConsts.radius8,
+            child: HandleImageWidget(image: image),
+          ),
         ),
       ),
     );

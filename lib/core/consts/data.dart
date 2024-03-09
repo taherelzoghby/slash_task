@@ -15,3 +15,9 @@ List<String> sizes = [
   'Large',
   'X Large',
 ];
+List<String> materials = [
+  'fabric',
+  'Medium',
+  'fabric',
+  'X fabric',
+];

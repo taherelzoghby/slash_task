@@ -15,11 +15,11 @@ class ItemSizeMaterial extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: onTap,
-      borderRadius: AppConsts.radius8,
-      child: Padding(
-        padding: AppConsts.padd4h,
+    return Padding(
+      padding: AppConsts.padd4h,
+      child: InkWell(
+        onTap: onTap,
+        borderRadius: AppConsts.radius8,
         child: Container(
           decoration: BoxDecoration(
             borderRadius: AppConsts.radius8,

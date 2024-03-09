@@ -1,1 +1,0 @@
-enum AuthMode { SignUp, Login, ResetPassword }

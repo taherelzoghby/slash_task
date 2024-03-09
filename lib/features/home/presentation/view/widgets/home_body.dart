@@ -4,7 +4,7 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:slash_task/core/consts/style.dart';
 
-import 'product_component.dart';
+import 'product_component_ontap.dart';
 
 class HomeBody extends StatelessWidget {
   const HomeBody({super.key});
@@ -29,7 +29,7 @@ class HomeBody extends StatelessWidget {
             columnCount: 2,
             child: const ScaleAnimation(
               child: FadeInAnimation(
-                child: ProductComponent(),
+                child: ProductComponentOnTap(),
               ),
             ),
           );

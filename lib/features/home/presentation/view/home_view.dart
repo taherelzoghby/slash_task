@@ -15,7 +15,7 @@ class HomeView extends StatelessWidget {
         leading: const Icon(Icons.arrow_back),
         title: const Text(
           StringsEn.slashAppBar,
-          style: AppConsts.style28,
+          style: AppConsts.style28w600,
         ),
         centerTitle: true,
       ),

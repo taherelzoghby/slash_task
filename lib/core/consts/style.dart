@@ -59,9 +59,14 @@ abstract class AppConsts {
   static BorderRadius radius100 = BorderRadius.circular(100);
 
 //styles
-  static const TextStyle style28 = TextStyle(
+  static const TextStyle style28w600 = TextStyle(
     fontSize: 28,
     fontWeight: FontWeight.w600,
+  );
+  static const TextStyle style17w600 = TextStyle(
+    color: AppConsts.white,
+    fontWeight: FontWeight.w600,
+    fontSize: 17,
   );
   static const List<BoxShadow> buttonShadow = [
     BoxShadow(
@@ -69,4 +74,21 @@ abstract class AppConsts {
       offset: Offset(0, 1.5),
     ),
   ];
+
+  //decorations
+  static BoxDecoration decorationCircleImage = BoxDecoration(
+    borderRadius: radius25,
+    border: Border.all(
+      color: greyBlackLightColor,
+    ),
+  );
+
+  //grid style
+  static const SliverGridDelegateWithFixedCrossAxisCount gridStyle =
+      SliverGridDelegateWithFixedCrossAxisCount(
+    crossAxisCount: 2,
+    crossAxisSpacing: 30,
+    mainAxisSpacing: 40,
+    childAspectRatio: 1.95 / 3,
+  );
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:slash_task/core/consts/routesPage.dart';
 import 'package:slash_task/core/consts/style.dart';
 
 import 'product_component.dart';
@@ -10,7 +11,7 @@ class ProductComponentOnTap extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () => GoRouter.of(context).push('location'),
+      onTap: () => GoRouter.of(context).push(detailsPath),
       borderRadius: AppConsts.radius25,
       child: const ProductComponent(),
     );

@@ -14,7 +14,6 @@ class SectionPriceFavouriteShopping extends StatelessWidget {
           child: Text(
             'EGP 1010',
             style: AppConsts.style17w600,
-            maxLines: 2,
             overflow: TextOverflow.ellipsis,
           ),
         ),

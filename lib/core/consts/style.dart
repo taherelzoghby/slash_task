@@ -51,6 +51,7 @@ abstract class AppConsts {
   );
   static const EdgeInsets topPadding20 = EdgeInsets.only(top: 20);
   static const EdgeInsets paddH40 = EdgeInsets.symmetric(horizontal: 40);
+  static const EdgeInsets paddH12 = EdgeInsets.symmetric(horizontal: 12);
 
 //radius
   static BorderRadius radius8 = BorderRadius.circular(8);
@@ -87,9 +88,7 @@ abstract class AppConsts {
   //decorations
   static BoxDecoration decorationCircleImage = BoxDecoration(
     borderRadius: radius25,
-    border: Border.all(
-      color: greyBlackLightColor,
-    ),
+    border: Border.all(color: greyBlackLightColor),
   );
 
   //grid style

@@ -31,7 +31,7 @@ abstract class AppConsts {
   static const double aspect13on5 = 13 / 5;
   static const double aspect10on19 = 10 / 19;
   static const double aspect16on7 = 16 / 7;
-  static const double aspect2point5on3 = 2.5 / 3;
+  static const double aspect2point9on3 = 2.9 / 3;
   static const double halfScreenHeight = 565;
 
   //padding
@@ -91,4 +91,12 @@ abstract class AppConsts {
     mainAxisSpacing: 40,
     childAspectRatio: 1.95 / 3,
   );
+
+  //
+  static const List<Offset> translateOffSet = [
+    Offset(-300.0, -70.0),
+    Offset(0.0, 0.0),
+    Offset(300.0, -70.0)
+  ];
+  static const List<double> rotateSwiper = [-65.0 / 180, 0.0, 65.0 / 180];
 }

@@ -9,9 +9,15 @@ class CustomProductImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ClipRRect(
-      borderRadius: AppConsts.radius25,
-      child: HandleImageWidget(image: image),
+    return Container(
+      decoration: BoxDecoration(
+        color: AppConsts.white,
+        borderRadius: AppConsts.radius25,
+      ),
+      child: ClipRRect(
+        borderRadius: AppConsts.radius25,
+        child: HandleImageWidget(image: image),
+      ),
     );
   }
 }

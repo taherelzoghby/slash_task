@@ -8,7 +8,7 @@ class ApiService {
 
   //get method
   Future<Map<String, dynamic>> get({
-    required int pagNum,
+    int pagNum = 1,
     String id = '',
   }) async {
     Response response = await dio.get("$url$id?limit=20&page=$pagNum");

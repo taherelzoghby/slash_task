@@ -5,6 +5,7 @@ import 'package:slash_task/core/consts/api_service.dart';
 import 'package:slash_task/core/services/hive_db.dart';
 import 'package:slash_task/core/services/local_datasource/get_products_local.dart';
 import 'package:slash_task/core/services/remote_datasource/get_products_remote.dart';
+import 'package:slash_task/features/details/data/repos/details_repo_impl.dart';
 import 'package:slash_task/features/details/presentation/view_model/get_product_cubit/get_product_cubit.dart';
 import 'package:slash_task/features/home/data/repos/home_repo_impl.dart';
 import 'package:slash_task/features/home/presentation/view_model/get_products_cubit/get_products_cubit.dart';
@@ -47,14 +48,20 @@ final router = GoRouter(
     GoRoute(
       path: detailsPath,
       pageBuilder: (context, state) {
-        int id=state.extra as int;
+        int id = state.extra as int;
         return buildPageWithDefaultTransition(
           context: context,
           state: state,
           child: MultiBlocProvider(
             providers: [
               BlocProvider(
-                create: (_) => GetProductCubit()..getProduct(id),
+                create: (_) => GetProductCubit(
+                  DetailsRepoImpl(
+                    apiService: ApiService(
+                      dio: Dio(),
+                    ),
+                  ),
+                )..getProduct(id),
               ),
               BlocProvider(
                 create: (_) => ChangeImageCubit(),

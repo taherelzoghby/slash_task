@@ -21,6 +21,7 @@ class CustomButton extends StatelessWidget {
       style: ButtonStyle(
         backgroundColor: MaterialStateProperty.all(background),
         shadowColor: MaterialStateProperty.all(AppConsts.white),
+        elevation: MaterialStateProperty.all(6),
       ),
       child: Text(
         text,

@@ -33,15 +33,4 @@ class SubCategories {
     );
   }
 
-  Map<String, dynamic> toMap() {
-    return {
-      'id': id,
-      'name': name,
-      'deletedAt': deletedAt,
-      'createdAt': createdAt?.toIso8601String(),
-      'updatedAt': updatedAt?.toIso8601String(),
-      'category_id': categoryId,
-      'image_path': imagePath,
-    };
-  }
 }

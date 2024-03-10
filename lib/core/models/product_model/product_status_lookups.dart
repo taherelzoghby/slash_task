@@ -23,13 +23,4 @@ class ProductStatusLookups {
           : DateTime.parse(data['updatedAt'] as String),
     );
   }
-
-  Map<String, dynamic> toMap() {
-    return {
-      'id': id,
-      'name': name,
-      'createdAt': createdAt?.toIso8601String(),
-      'updatedAt': updatedAt?.toIso8601String(),
-    };
-  }
 }

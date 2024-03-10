@@ -27,13 +27,5 @@ class ProductVarientImage {
     );
   }
 
-  Map<String, dynamic> toMap() {
-    return {
-      'id': id,
-      'image_path': imagePath,
-      'product_varient_id': productVarientId,
-      'createdAt': createdAt?.toIso8601String(),
-      'updatedAt': updatedAt?.toIso8601String(),
-    };
-  }
+
 }

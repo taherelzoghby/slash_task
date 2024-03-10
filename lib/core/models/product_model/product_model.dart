@@ -1,3 +1,4 @@
+import 'available_properties.dart';
 import 'brands.dart';
 import 'product_variation.dart';
 import 'sub_categories.dart';
@@ -15,8 +16,9 @@ class ProductModel {
   dynamic deletedAt;
   int? productRating;
   int? estimatedDaysPreparing;
-  Brands? brands;
+  BrandsModel? brands;
   List<ProductVariation>? productVariations;
+  List<AvailablePropertiesModel>? availableProperties;
   SubCategories? subCategories;
   dynamic sizeChart;
   int? notApprovedVariants;
@@ -39,6 +41,7 @@ class ProductModel {
     this.subCategories,
     this.sizeChart,
     this.notApprovedVariants,
+    this.availableProperties,
   });
 
   factory ProductModel.fromMap(Map<String, dynamic> data) {
@@ -50,6 +53,13 @@ class ProductModel {
       subCategoryId: (data['sub_category_id'] as int?) ?? 0,
       brandId: (data['brand_id'] as int?) ?? 0,
       bostaSizeId: (data['bosta_size_id'] as dynamic) ?? '',
+      availableProperties: data['avaiableProperties'] != null
+          ? List<AvailablePropertiesModel>.from(
+              (data['avaiableProperties'] as List<Map<String, dynamic>>).map(
+                (e) => AvailablePropertiesModel.fromJson(e),
+              ),
+            )
+          : [],
       createdAt: data['createdAt'] == null
           ? null
           : DateTime.parse(data['createdAt'] as String),
@@ -61,10 +71,14 @@ class ProductModel {
       estimatedDaysPreparing: (data['estimated_days_preparing'] as int?) ?? 0,
       brands: data['Brands'] == null
           ? null
-          : Brands.fromMap(data['Brands'] as Map<String, dynamic>),
-      productVariations: (data['ProductVariations'] as List<dynamic>?)
-          ?.map((e) => ProductVariation.fromMap(e as Map<String, dynamic>))
-          .toList(),
+          : BrandsModel.fromMap(data['Brands'] as Map<String, dynamic>),
+      productVariations: data['ProductVariations'] == null
+          ? []
+          : List<ProductVariation>.from(
+              (data['ProductVariations'] as List<Map<String, dynamic>>).map(
+                (e) => ProductVariation.fromMap(e),
+              ),
+            ),
       subCategories: data['SubCategories'] == null
           ? null
           : SubCategories.fromMap(
@@ -72,27 +86,5 @@ class ProductModel {
       sizeChart: (data['SizeChart'] as dynamic) ?? '',
       notApprovedVariants: (data['notApprovedVariants'] as int?) ?? 0,
     );
-  }
-
-  Map<String, dynamic> toMap() {
-    return {
-      'id': id,
-      'name': name,
-      'type': type,
-      'description': description,
-      'sub_category_id': subCategoryId,
-      'brand_id': brandId,
-      'bosta_size_id': bostaSizeId,
-      'createdAt': createdAt?.toIso8601String(),
-      'updatedAt': updatedAt?.toIso8601String(),
-      'deletedAt': deletedAt,
-      'product_rating': productRating,
-      'estimated_days_preparing': estimatedDaysPreparing,
-      'Brands': brands?.toMap(),
-      'ProductVariations': productVariations?.map((e) => e.toMap()).toList(),
-      'SubCategories': subCategories?.toMap(),
-      'SizeChart': sizeChart,
-      'notApprovedVariants': notApprovedVariants,
-    };
   }
 }

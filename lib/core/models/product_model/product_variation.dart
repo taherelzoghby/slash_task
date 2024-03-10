@@ -1,3 +1,4 @@
+import 'product_properties_values.dart';
 import 'product_status_lookups.dart';
 import 'product_varient_image.dart';
 
@@ -15,6 +16,7 @@ class ProductVariation {
   dynamic acceptedBy;
   ProductStatusLookups? productStatusLookups;
   List<ProductVarientImage>? productVarientImages;
+  List<ProductPropertiesValues>? productPropertiesValues;
 
   ProductVariation({
     this.id,
@@ -30,6 +32,7 @@ class ProductVariation {
     this.acceptedBy,
     this.productStatusLookups,
     this.productVarientImages,
+    this.productPropertiesValues,
   });
 
   factory ProductVariation.fromMap(Map<String, dynamic> data) {
@@ -41,6 +44,14 @@ class ProductVariation {
       warehouseId: (data['warehouse_id'] as dynamic) ?? '',
       isDefault: (data['is_default'] as bool?) ?? false,
       deletedAt: (data['deletedAt'] as dynamic) ?? '',
+      productPropertiesValues: data['productPropertiesValues'] != null
+          ? List<ProductPropertiesValues>.from(
+              (data['productPropertiesValues'] as List<Map<String, dynamic>>)
+                  .map(
+                (e) => ProductPropertiesValues.fromJson(e),
+              ),
+            )
+          : [],
       createdAt: data['createdAt'] == null
           ? null
           : DateTime.parse(data['createdAt'] as String),
@@ -54,28 +65,13 @@ class ProductVariation {
           ? null
           : ProductStatusLookups.fromMap(
               data['ProductStatusLookups'] as Map<String, dynamic>),
-      productVarientImages: (data['ProductVarientImages'] as List<dynamic>?)
-          ?.map((e) => ProductVarientImage.fromMap(e as Map<String, dynamic>))
-          .toList(),
+      productVarientImages: data['ProductVarientImages'] == null
+          ? []
+          : List<ProductVarientImage>.from(
+              (data['ProductVarientImages'] as List<Map<String, dynamic>>).map(
+                (e) => ProductVarientImage.fromMap(e),
+              ),
+            ),
     );
-  }
-
-  Map<String, dynamic> toMap() {
-    return {
-      'id': id,
-      'product_id': productId,
-      'price': price,
-      'quantity': quantity,
-      'warehouse_id': warehouseId,
-      'is_default': isDefault,
-      'deletedAt': deletedAt,
-      'createdAt': createdAt?.toIso8601String(),
-      'updatedAt': updatedAt?.toIso8601String(),
-      'product_variation_status_id': productVariationStatusId,
-      'accepted_by': acceptedBy,
-      'ProductStatusLookups': productStatusLookups?.toMap(),
-      'ProductVarientImages':
-          productVarientImages?.map((e) => e.toMap()).toList(),
-    };
   }
 }

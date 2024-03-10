@@ -1,4 +1,4 @@
-class Brands {
+class BrandsModel {
   int? id;
   String? brandType;
   String? brandName;
@@ -23,7 +23,7 @@ class Brands {
   int? daysLimitToReturn;
   dynamic planId;
 
-  Brands({
+  BrandsModel({
     this.id,
     this.brandType,
     this.brandName,
@@ -49,8 +49,8 @@ class Brands {
     this.planId,
   });
 
-  factory Brands.fromMap(Map<String, dynamic> data) {
-    return Brands(
+  factory BrandsModel.fromMap(Map<String, dynamic> data) {
+    return BrandsModel(
       id: data['id'] as int?,
       brandType: (data['brand_type'] as String?) ?? '',
       brandName: (data['brand_name'] as String?) ?? '',
@@ -83,31 +83,4 @@ class Brands {
     );
   }
 
-  Map<String, dynamic> toMap() {
-    return {
-      'id': id,
-      'brand_type': brandType,
-      'brand_name': brandName,
-      'brand_facebook_page_link': brandFacebookPageLink,
-      'brand_instagram_page_link': brandInstagramPageLink,
-      'brand_website_link': brandWebsiteLink,
-      'brand_mobile_number': brandMobileNumber,
-      'brand_email_address': brandEmailAddress,
-      'tax_id_number': taxIdNumber,
-      'brand_description': brandDescription,
-      'brand_logo_image_path': brandLogoImagePath,
-      'brand_status_id': brandStatusId,
-      'brand_store_address_id': brandStoreAddressId,
-      'brand_category_id': brandCategoryId,
-      'deletedAt': deletedAt,
-      'createdAt': createdAt?.toIso8601String(),
-      'updatedAt': updatedAt?.toIso8601String(),
-      'brand_seller_id': brandSellerId,
-      'brand_id': brandId,
-      'slash_contract_path': slashContractPath,
-      'brand_rating': brandRating,
-      'days_limit_to_return': daysLimitToReturn,
-      'planId': planId,
-    };
-  }
 }

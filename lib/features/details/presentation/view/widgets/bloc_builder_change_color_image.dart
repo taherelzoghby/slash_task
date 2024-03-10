@@ -35,11 +35,6 @@ class BlocBuilderChangeColorOrImage extends StatelessWidget {
               image: variations![index].productVarientImages![0].imagePath!,
               isActive: bloc.ind == index,
             );
-            // return ItemColor(
-            //   onTap: () => bloc.changeColor(index),
-            //   color: colors[index],
-            //   isActive: bloc.ind == index,
-            // );
           },
           itemCount: variations!.length,
         );

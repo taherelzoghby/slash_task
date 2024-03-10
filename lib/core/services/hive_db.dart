@@ -13,7 +13,7 @@ class HiveDb {
   //init hive
   static init() async {
     await Hive.initFlutter();
-    // Register Adapter
+    // Register Adapters
     Hive.registerAdapter(ProductModelAdapter());
     Hive.registerAdapter(BrandsModelAdapter());
     Hive.registerAdapter(AvailablePropertiesModelAdapter());

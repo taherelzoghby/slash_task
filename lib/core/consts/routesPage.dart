@@ -40,7 +40,7 @@ final router = GoRouter(
                 hiveDb: HiveDb(),
               ),
             ),
-          )..getProducts(),
+          ),
           child: const HomeView(),
         ),
       ),

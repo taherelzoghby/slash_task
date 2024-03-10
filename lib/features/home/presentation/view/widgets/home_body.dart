@@ -41,7 +41,9 @@ class _HomeBodyState extends State<HomeBody> {
         if (state is GetProductsLoaded ||
             state is GetProductsLoadingPagination ||
             state is GetProductsErrorPagination) {
-          return ProductsGridView(listOfProducts: productsList);
+          return ProductsGridView(
+            listOfProducts: productsList,
+          );
         } else if (state is GetProductsError) {
           return ErrorWidg(message: state.message);
         } else {

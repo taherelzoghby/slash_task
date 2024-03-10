@@ -13,8 +13,8 @@ class GetProductsLocalImpl extends GetProductsLocal {
   @override
   List<ProductModel> getProductsLocal({required int pageNum}) {
     List<ProductModel> products = hiveDb.getProducts();
-    int start = (pageNum - 1) * 20;
-    int end = (pageNum) * 20;
+    int start = (pageNum - 1) * 20;//0
+    int end = (pageNum) * 20;//20
     int length = products.length;
     if (start >= length || end > length) {//out
       return [];

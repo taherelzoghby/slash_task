@@ -16,7 +16,7 @@ class BlocBuilderSectionColorsSizesMaterials extends StatelessWidget {
         if (state is GetProductLoaded) {
           ProductModel product = state.productModel;
           return SectionColorsSizesMaterials(product: product);
-        }else{
+        } else {
           return const LoadingWidget();
         }
       },

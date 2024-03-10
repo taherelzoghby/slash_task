@@ -1,25 +1,34 @@
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
-import 'package:slash_task/core/consts/api_service.dart';
 
 import 'package:slash_task/core/errors/failure_message.dart';
-import 'package:slash_task/core/helper/convertListOfMapToListOfModel.dart';
-
 import 'package:slash_task/core/models/product_model/product_model.dart';
+import 'package:slash_task/core/services/local_datasource/get_products_local.dart';
+import 'package:slash_task/core/services/remote_datasource/get_products_remote.dart';
 
 import 'home_repo.dart';
 
 class HomeReoImpl extends HomeRepo {
-  final ApiService apiService;
+  final GetProductsRemote getProductsRemote;
+  final GetProductsLocal getProductsLocal;
 
-  HomeReoImpl({required this.apiService});
+  HomeReoImpl({
+    required this.getProductsRemote,
+    required this.getProductsLocal,
+  });
 
   @override
-  Future<Either<FailureServ, List<ProductModel>>> getProducts() async {
+  Future<Either<FailureServ, List<ProductModel>>> getProducts({
+    required int pagNum,
+  }) async {
     try {
-      Map<String, dynamic> result = await apiService.get();
-      List<ProductModel> model = convertModelToList(result['data']);
-      return Right(model);
+      List<ProductModel> products = getProductsLocal.getProductsLocal(
+        pageNum: pagNum,
+      );
+      if (products.isEmpty) {
+        products = await getProductsRemote.getProductsRemote(pageNum: pagNum);
+      }
+      return Right(products);
     } catch (error) {
       if (error is DioException) {
         return Left(ServerFailure.fromDioError(error));

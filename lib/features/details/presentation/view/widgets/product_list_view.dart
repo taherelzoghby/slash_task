@@ -1,13 +1,18 @@
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
-import '../../../../../core/consts/style.dart';
+import 'package:flutter/material.dart';
+import 'package:slash_task/core/consts/style.dart';
+import 'package:slash_task/core/models/product_model/product_model.dart';
+
 import 'rest_of_details_page.dart';
 import 'swiper_image.dart';
 
-class DetailsBody extends StatelessWidget {
-  const DetailsBody({super.key});
+class ProductListView extends StatelessWidget {
+  const ProductListView({
+    super.key,
+    required this.productModel,
+  });
+
+  final ProductModel productModel;
 
   @override
   Widget build(BuildContext context) {

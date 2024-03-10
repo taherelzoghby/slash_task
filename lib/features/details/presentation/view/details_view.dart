@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../../../core/consts/strings.dart';
 import '../../../../core/consts/style.dart';
-import 'widgets/details_body.dart';
+import 'widgets/details_body_bloc_builder.dart';
 
 class DetailsView extends StatelessWidget {
   const DetailsView({super.key});
@@ -20,7 +20,7 @@ class DetailsView extends StatelessWidget {
         centerTitle: true,
       ),
       body: const SafeArea(
-        child: DetailsBody(),
+        child: DetailsBodyBlocBuilder(),
       ),
     );
   }

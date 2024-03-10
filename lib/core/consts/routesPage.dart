@@ -1,9 +1,9 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:slash_task/core/consts/api_service.dart';
+import 'package:slash_task/core/data_source/local_datasource/get_products_local.dart';
+import 'package:slash_task/core/data_source/remote_datasource/get_products_remote.dart';
 import 'package:slash_task/core/services/hive_db.dart';
-import 'package:slash_task/core/services/local_datasource/get_products_local.dart';
-import 'package:slash_task/core/services/remote_datasource/get_products_remote.dart';
 import 'package:slash_task/core/services/service_locator.dart';
 import 'package:slash_task/features/details/data/repos/details_repo_impl.dart';
 import 'package:slash_task/features/details/presentation/view_model/get_colors_or_image_cubit/get_colors_or_image_cubit.dart';

@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:slash_task/core/consts/data.dart';
 import '../../../../../core/consts/style.dart';
 
 import 'images_bloc_builder_listview.dart';

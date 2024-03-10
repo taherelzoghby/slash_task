@@ -56,8 +56,7 @@ class SectionColorsSizesMaterials extends StatelessWidget {
               ),
 
         const AspectRatio(aspectRatio: AppConsts.aspect16on1),
-        //description
-        const SectionDescription(),
+
       ],
     );
   }

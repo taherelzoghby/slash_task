@@ -31,6 +31,9 @@ class RestOfDetailsPage extends StatelessWidget {
 
           BlocBuilderSectionColorsSizesMaterials(),
           AspectRatio(aspectRatio: AppConsts.aspect16on1),
+          //description
+          SectionDescription(),
+          AspectRatio(aspectRatio: AppConsts.aspect16on1),
           //add to cart
           SectionButton(),
         ],

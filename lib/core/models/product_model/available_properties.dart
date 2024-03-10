@@ -1,7 +1,12 @@
-import 'values.dart';
+import 'package:hive/hive.dart';
 
+import 'values.dart';
+part 'available_properties.g.dart';
+@HiveType(typeId: 5)
 class AvailablePropertiesModel {
+  @HiveField(0)
   String? property;
+  @HiveField(1)
   List<Values>? values;
 
   AvailablePropertiesModel({this.property, this.values});

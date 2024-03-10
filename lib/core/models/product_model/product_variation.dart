@@ -1,21 +1,25 @@
+import 'package:hive/hive.dart';
+
 import 'product_properties_values.dart';
-import 'product_status_lookups.dart';
 import 'product_varient_image.dart';
 
+part 'product_variation.g.dart';
+
+@HiveType(typeId: 2)
 class ProductVariation {
+  @HiveField(0)
   int? id;
+  @HiveField(1)
   int? productId;
+  @HiveField(2)
   int? price;
+  @HiveField(3)
   int? quantity;
-  dynamic warehouseId;
+  @HiveField(4)
   bool? isDefault;
-  dynamic deletedAt;
-  DateTime? createdAt;
-  DateTime? updatedAt;
-  int? productVariationStatusId;
-  dynamic acceptedBy;
-  ProductStatusLookups? productStatusLookups;
+  @HiveField(5)
   List<ProductVarientImage>? productVarientImages;
+  @HiveField(6)
   List<ProductPropertiesValues>? productPropertiesValues;
 
   ProductVariation({
@@ -23,14 +27,7 @@ class ProductVariation {
     this.productId,
     this.price,
     this.quantity,
-    this.warehouseId,
     this.isDefault,
-    this.deletedAt,
-    this.createdAt,
-    this.updatedAt,
-    this.productVariationStatusId,
-    this.acceptedBy,
-    this.productStatusLookups,
     this.productVarientImages,
     this.productPropertiesValues,
   });
@@ -41,30 +38,7 @@ class ProductVariation {
       productId: (data['product_id'] as int?) ?? 0,
       price: (data['price'] as int?) ?? 0,
       quantity: (data['quantity'] as int?) ?? 0,
-      warehouseId: (data['warehouse_id'] as dynamic) ?? '',
       isDefault: (data['is_default'] as bool?) ?? false,
-      deletedAt: (data['deletedAt'] as dynamic) ?? '',
-      productPropertiesValues: data['productPropertiesValues'] != null
-          ? List<ProductPropertiesValues>.from(
-              (data['productPropertiesValues'] as List)
-                  .map(
-                (e) => ProductPropertiesValues.fromJson(e),
-              ),
-            )
-          : [],
-      createdAt: data['createdAt'] == null
-          ? null
-          : DateTime.parse(data['createdAt'] as String),
-      updatedAt: data['updatedAt'] == null
-          ? null
-          : DateTime.parse(data['updatedAt'] as String),
-      productVariationStatusId:
-          (data['product_variation_status_id'] as int?) ?? 0,
-      acceptedBy: (data['accepted_by'] as dynamic) ?? '',
-      productStatusLookups: data['ProductStatusLookups'] == null
-          ? null
-          : ProductStatusLookups.fromMap(
-              data['ProductStatusLookups'] as Map<String, dynamic>),
       productVarientImages: data['ProductVarientImages'] == null
           ? []
           : List<ProductVarientImage>.from(
@@ -72,6 +46,13 @@ class ProductVariation {
                 (e) => ProductVarientImage.fromMap(e),
               ),
             ),
+      productPropertiesValues: data['productPropertiesValues'] != null
+          ? List<ProductPropertiesValues>.from(
+              (data['productPropertiesValues'] as List).map(
+                (e) => ProductPropertiesValues.fromJson(e),
+              ),
+            )
+          : [],
     );
   }
 }

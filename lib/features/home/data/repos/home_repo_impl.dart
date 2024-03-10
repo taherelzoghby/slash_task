@@ -1,11 +1,11 @@
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
+import 'package:slash_task/core/data_source/local_datasource/get_products_local.dart';
 
 import 'package:slash_task/core/errors/failure_message.dart';
 import 'package:slash_task/core/models/product_model/product_model.dart';
-import 'package:slash_task/core/services/local_datasource/get_products_local.dart';
-import 'package:slash_task/core/services/remote_datasource/get_products_remote.dart';
 
+import '../../../../core/data_source/remote_datasource/get_products_remote.dart';
 import 'home_repo.dart';
 
 class HomeReoImpl extends HomeRepo {

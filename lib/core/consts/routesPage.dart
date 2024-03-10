@@ -5,6 +5,7 @@ import 'package:slash_task/core/consts/api_service.dart';
 import 'package:slash_task/core/services/hive_db.dart';
 import 'package:slash_task/core/services/local_datasource/get_products_local.dart';
 import 'package:slash_task/core/services/remote_datasource/get_products_remote.dart';
+import 'package:slash_task/core/services/service_locator.dart';
 import 'package:slash_task/features/details/data/repos/details_repo_impl.dart';
 import 'package:slash_task/features/details/presentation/view_model/get_product_cubit/get_product_cubit.dart';
 import 'package:slash_task/features/home/data/repos/home_repo_impl.dart';
@@ -34,9 +35,7 @@ final router = GoRouter(
                 hiveDb: HiveDb(),
               ),
               getProductsRemote: GetProductsRemoteImpl(
-                apiService: ApiService(
-                  dio: Dio(),
-                ),
+                apiService: getIt.get<ApiService>(),
                 hiveDb: HiveDb(),
               ),
             ),
@@ -57,9 +56,7 @@ final router = GoRouter(
               BlocProvider(
                 create: (_) => GetProductCubit(
                   DetailsRepoImpl(
-                    apiService: ApiService(
-                      dio: Dio(),
-                    ),
+                    apiService: getIt.get<ApiService>(),
                   ),
                 )..getProduct(id),
               ),

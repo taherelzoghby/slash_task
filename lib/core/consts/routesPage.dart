@@ -2,6 +2,9 @@ import 'package:dio/dio.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:slash_task/core/consts/api_service.dart';
+import 'package:slash_task/core/services/hive_db.dart';
+import 'package:slash_task/core/services/local_datasource/get_products_local.dart';
+import 'package:slash_task/core/services/remote_datasource/get_products_remote.dart';
 import 'package:slash_task/features/home/data/repos/home_repo_impl.dart';
 import 'package:slash_task/features/home/presentation/view_model/get_products_cubit/get_products_cubit.dart';
 import '../../features/details/presentation/view/details_view.dart';
@@ -12,6 +15,7 @@ import '../../features/details/presentation/view_model/change_material_cubit/cha
 import '../../features/details/presentation/view_model/change_size_cubit/change_size_cubit.dart';
 import '../../features/home/presentation/view/home_view.dart';
 import '../helper/custom_animation.dart';
+
 const homePath = '/';
 const detailsPath = '/detailsPage';
 final router = GoRouter(
@@ -24,7 +28,15 @@ final router = GoRouter(
         child: BlocProvider(
           create: (_) => GetProductsCubit(
             HomeReoImpl(
-              apiService: ApiService(dio: Dio()),
+              getProductsLocal: GetProductsLocalImpl(
+                hiveDb: HiveDb(),
+              ),
+              getProductsRemote: GetProductsRemoteImpl(
+                apiService: ApiService(
+                  dio: Dio(),
+                ),
+                hiveDb: HiveDb(),
+              ),
             ),
           )..getProducts(),
           child: const HomeView(),

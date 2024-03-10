@@ -1,14 +1,16 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:slash_task/core/services/hive_db.dart';
 import 'core/consts/strings.dart';
 import 'core/consts/style.dart';
 
 import 'core/consts/routesPage.dart';
 import 'core/services/bloc_observer.dart';
 
-void main() {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await HiveDb.init();
   Bloc.observer = Observe();
   runApp(const MyApp());
 }

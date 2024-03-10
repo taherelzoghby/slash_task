@@ -5,6 +5,7 @@ import 'package:slash_task/core/consts/api_service.dart';
 import 'package:slash_task/core/services/hive_db.dart';
 import 'package:slash_task/core/services/local_datasource/get_products_local.dart';
 import 'package:slash_task/core/services/remote_datasource/get_products_remote.dart';
+import 'package:slash_task/features/details/presentation/view_model/get_product_cubit/get_product_cubit.dart';
 import 'package:slash_task/features/home/data/repos/home_repo_impl.dart';
 import 'package:slash_task/features/home/presentation/view_model/get_products_cubit/get_products_cubit.dart';
 import '../../features/details/presentation/view/details_view.dart';
@@ -45,30 +46,36 @@ final router = GoRouter(
     ),
     GoRoute(
       path: detailsPath,
-      pageBuilder: (context, state) => buildPageWithDefaultTransition(
-        context: context,
-        state: state,
-        child: MultiBlocProvider(
-          providers: [
-            BlocProvider(
-              create: (_) => ChangeImageCubit(),
-            ),
-            BlocProvider(
-              create: (_) => ChangeColorOrImageCubit(),
-            ),
-            BlocProvider(
-              create: (_) => ChangeSizeCubit(),
-            ),
-            BlocProvider(
-              create: (_) => ChangeMaterialCubit(),
-            ),
-            BlocProvider(
-              create: (_) => ArrowDiscCubit(),
-            ),
-          ],
-          child: const DetailsView(),
-        ),
-      ),
+      pageBuilder: (context, state) {
+        int id=state.extra as int;
+        return buildPageWithDefaultTransition(
+          context: context,
+          state: state,
+          child: MultiBlocProvider(
+            providers: [
+              BlocProvider(
+                create: (_) => GetProductCubit()..getProduct(id),
+              ),
+              BlocProvider(
+                create: (_) => ChangeImageCubit(),
+              ),
+              BlocProvider(
+                create: (_) => ChangeColorOrImageCubit(),
+              ),
+              BlocProvider(
+                create: (_) => ChangeSizeCubit(),
+              ),
+              BlocProvider(
+                create: (_) => ChangeMaterialCubit(),
+              ),
+              BlocProvider(
+                create: (_) => ArrowDiscCubit(),
+              ),
+            ],
+            child: const DetailsView(),
+          ),
+        );
+      },
     ),
   ],
 );

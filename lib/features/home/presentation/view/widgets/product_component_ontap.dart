@@ -17,7 +17,10 @@ class ProductComponentOnTap extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () => GoRouter.of(context).push(detailsPath),
+      onTap: () => GoRouter.of(context).push(
+        detailsPath,
+        extra: product.id,
+      ),
       borderRadius: AppConsts.radius25,
       child: ProductComponent(
         product: product,

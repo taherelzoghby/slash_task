@@ -1,15 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_swiper_view/flutter_swiper_view.dart';
-
-import '../../../../../core/consts/data.dart';
 import '../../../../../core/consts/style.dart';
 import '../../../../home/presentation/view/widgets/custom_product_image.dart';
 import '../../view_model/change_image_cubit/change_image_cubit.dart';
 import 'photo_view_widget.dart';
 
 class SectionSwiper extends StatelessWidget {
-  const SectionSwiper({super.key});
+  const SectionSwiper({
+    super.key,
+    required this.listOfImages,
+  });
+
+  final List<String?> listOfImages;
 
   @override
   Widget build(BuildContext context) {
@@ -34,18 +37,19 @@ class SectionSwiper extends StatelessWidget {
             curve: Curves.easeIn,
             onTap: (int val) => Navigator.of(context).push(
               MaterialPageRoute(
-                builder: (_) => PhotoViewWidget(ind: val),
+                builder: (_) => PhotoViewWidget(
+                  ind: val,
+                  images: listOfImages,
+                ),
               ),
             ),
             onIndexChanged: (int value) => bloc.changeIndex(
               value: value,
             ),
             itemBuilder: (context, index) {
-              return CustomProductImage(
-                image: images[index],
-              );
+              return CustomProductImage(image: listOfImages[index]!);
             },
-            itemCount: images.length,
+            itemCount: listOfImages.length,
             controller: bloc.controller,
           ),
         );

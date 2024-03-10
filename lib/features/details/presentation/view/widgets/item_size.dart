@@ -10,7 +10,7 @@ class ItemSizeMaterial extends StatelessWidget {
   });
 
   final bool isActive;
-  final String value;
+  final String? value;
   final void Function()? onTap;
 
   @override
@@ -29,7 +29,7 @@ class ItemSizeMaterial extends StatelessWidget {
           child: Padding(
             padding: AppConsts.padding5h10v,
             child: Text(
-              value,
+              value!,
               style: AppConsts.style17w600.copyWith(
                 color: isActive ? AppConsts.backGroundColor : AppConsts.white,
               ),

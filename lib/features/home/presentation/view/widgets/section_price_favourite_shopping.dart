@@ -18,7 +18,7 @@ class SectionPriceFavouriteShopping extends StatelessWidget {
         Expanded(
           flex: 5,
           child: Text(
-            '${StringsEn.egp} ${product.productVariations![0].price}',
+            '${StringsEn.egp} ${product.variations![0].price}',
             style: AppConsts.style17w600,
             overflow: TextOverflow.ellipsis,
           ),

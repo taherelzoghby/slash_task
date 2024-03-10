@@ -23,16 +23,18 @@ class ProductModelAdapter extends TypeAdapter<ProductModel> {
       description: fields[3] as String?,
       brandId: fields[4] as int?,
       brands: fields[5] as BrandsModel?,
-      productVariations: (fields[6] as List?)?.cast<ProductVariation>(),
+      variations: (fields[6] as List?)?.cast<ProductVariation>(),
       availableProperties:
           (fields[7] as List?)?.cast<AvailablePropertiesModel>(),
+      brandImage: fields[9] as String?,
+      brandName: fields[8] as String?,
     );
   }
 
   @override
   void write(BinaryWriter writer, ProductModel obj) {
     writer
-      ..writeByte(8)
+      ..writeByte(10)
       ..writeByte(0)
       ..write(obj.id)
       ..writeByte(1)
@@ -46,9 +48,13 @@ class ProductModelAdapter extends TypeAdapter<ProductModel> {
       ..writeByte(5)
       ..write(obj.brands)
       ..writeByte(6)
-      ..write(obj.productVariations)
+      ..write(obj.variations)
       ..writeByte(7)
-      ..write(obj.availableProperties);
+      ..write(obj.availableProperties)
+      ..writeByte(8)
+      ..write(obj.brandName)
+      ..writeByte(9)
+      ..write(obj.brandImage);
   }
 
   @override

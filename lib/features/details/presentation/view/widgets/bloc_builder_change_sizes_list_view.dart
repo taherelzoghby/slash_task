@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../../../../core/consts/data.dart';
-import '../../view_model/change_size_cubit/change_size_cubit.dart';
+import 'package:slash_task/features/details/presentation/view_model/change_size_cubit/change_size_cubit.dart';
+
+import '../../../../../core/models/product_model/values.dart';
 import 'item_size.dart';
 
-class SizesListView extends StatelessWidget {
-  const SizesListView({super.key});
+class BlocBuilderChangeSizesListView extends StatelessWidget {
+  const BlocBuilderChangeSizesListView({super.key, required this.sizes});
+
+  final List<Values>? sizes;
 
   @override
   Widget build(BuildContext context) {
@@ -20,11 +23,11 @@ class SizesListView extends StatelessWidget {
           itemBuilder: (context, index) {
             return ItemSizeMaterial(
               onTap: () => bloc.changeSize(index),
-              value: sizes[index],
+              value: sizes![index].value,
               isActive: bloc.index == index,
             );
           },
-          itemCount: sizes.length,
+          itemCount: sizes!.length,
         );
       },
     );

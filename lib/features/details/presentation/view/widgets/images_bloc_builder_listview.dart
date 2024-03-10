@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../view_model/change_image_cubit/change_image_cubit.dart';
-
-import '../../../../../core/consts/data.dart';
 import 'item_image_indicator.dart';
 
 class ImagesBlocBuilderListView extends StatelessWidget {
-  const ImagesBlocBuilderListView({super.key});
-
+  const ImagesBlocBuilderListView({super.key, required this.images});
+  final List<String?> images;
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<ChangeImageCubit, ChangeImageState>(

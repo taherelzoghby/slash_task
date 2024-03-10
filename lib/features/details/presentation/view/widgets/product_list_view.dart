@@ -1,18 +1,10 @@
-
 import 'package:flutter/material.dart';
 import 'package:slash_task/core/consts/style.dart';
-import 'package:slash_task/core/models/product_model/product_model.dart';
-
+import 'bloc_provider_swiper_image.dart';
 import 'rest_of_details_page.dart';
-import 'swiper_image.dart';
 
 class ProductListView extends StatelessWidget {
-  const ProductListView({
-    super.key,
-    required this.productModel,
-  });
-
-  final ProductModel productModel;
+  const ProductListView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +12,7 @@ class ProductListView extends StatelessWidget {
       children: const [
         AspectRatio(aspectRatio: AppConsts.aspect16on1),
         //images
-        SwiperImages(),
+        BlocProviderSwiperImages(),
         AspectRatio(aspectRatio: AppConsts.aspect16on1),
         //rest of page
         RestOfDetailsPage(),

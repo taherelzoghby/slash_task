@@ -6,6 +6,8 @@ import 'package:slash_task/core/services/local_datasource/get_products_local.dar
 import 'package:slash_task/core/services/remote_datasource/get_products_remote.dart';
 import 'package:slash_task/core/services/service_locator.dart';
 import 'package:slash_task/features/details/data/repos/details_repo_impl.dart';
+import 'package:slash_task/features/details/presentation/view_model/get_colors_or_image_cubit/get_colors_or_image_cubit.dart';
+import 'package:slash_task/features/details/presentation/view_model/get_images_swiper/get_images_swiper_cubit.dart';
 import 'package:slash_task/features/details/presentation/view_model/get_product_cubit/get_product_cubit.dart';
 import 'package:slash_task/features/home/data/repos/home_repo_impl.dart';
 import 'package:slash_task/features/home/presentation/view_model/get_products_cubit/get_products_cubit.dart';
@@ -63,7 +65,16 @@ final router = GoRouter(
                 create: (_) => ChangeImageCubit(),
               ),
               BlocProvider(
+                create: (_) => GetImagesSwiperCubit(),
+              ),
+              BlocProvider(
                 create: (_) => ChangeColorOrImageCubit(),
+              ),
+              BlocProvider(
+                create: (context) => GetColorsOrImageCubit()
+                  ..getColors(
+                    context,
+                  ),
               ),
               BlocProvider(
                 create: (_) => ChangeSizeCubit(),

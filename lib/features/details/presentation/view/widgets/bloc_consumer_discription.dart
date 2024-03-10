@@ -1,20 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:slash_task/core/consts/style.dart';
+import 'package:slash_task/core/models/product_model/product_model.dart';
+
 import '../../view_model/arrow_cubit/arrow_disc_cubit.dart';
 
-import '../../../../../core/consts/style.dart';
+class DiscriptionBlocConsumer extends StatefulWidget {
+  const DiscriptionBlocConsumer({super.key, required this.productModel});
 
-class SectionDiscBlocConsumer extends StatefulWidget {
-  const SectionDiscBlocConsumer({
-    super.key,
-  });
+  final ProductModel productModel;
 
   @override
-  State<SectionDiscBlocConsumer> createState() =>
-      _SectionDiscBlocConsumerState();
+  State<DiscriptionBlocConsumer> createState() =>
+      _DiscriptionBlocConsumerState();
 }
 
-class _SectionDiscBlocConsumerState extends State<SectionDiscBlocConsumer> {
+class _DiscriptionBlocConsumerState extends State<DiscriptionBlocConsumer> {
   bool arrowDown = false;
 
   @override
@@ -28,7 +29,7 @@ class _SectionDiscBlocConsumerState extends State<SectionDiscBlocConsumer> {
       builder: (context, state) {
         return arrowDown
             ? Text(
-                "delivered as it's a pre-order product.\n\nProduct may vary a little as it's a handmade product and each piece is a unique one.",
+                widget.productModel.description!,
                 style: AppConsts.style17w600.copyWith(
                   fontSize: 14,
                 ),

@@ -35,12 +35,12 @@ class ProductVariation {
   factory ProductVariation.fromMap(Map<String, dynamic> data) {
     return ProductVariation(
       id: (data['id'] as int?) ?? 0,
-      productId: (data['product_id'] as int?) ?? 0,
+      productId: (data['productId'] as int?) ?? 0,
       price: (data['price'] as int?) ?? 0,
       quantity: (data['quantity'] as int?) ?? 0,
-      isDefault: (data['is_default'] as bool?) ?? false,
+      isDefault: (data['isDefault'] as bool?) ?? false,
       productVarientImages: data['ProductVarientImages'] == null
-          ? []
+          ? null
           : List<ProductVarientImage>.from(
               (data['ProductVarientImages'] as List).map(
                 (e) => ProductVarientImage.fromMap(e),
@@ -49,10 +49,10 @@ class ProductVariation {
       productPropertiesValues: data['productPropertiesValues'] != null
           ? List<ProductPropertiesValues>.from(
               (data['productPropertiesValues'] as List).map(
-                (e) => ProductPropertiesValues.fromJson(e),
+                (e) => ProductPropertiesValues.fromMap(e),
               ),
             )
-          : [],
+          : null,
     );
   }
 }

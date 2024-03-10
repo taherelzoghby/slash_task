@@ -22,9 +22,7 @@ class ProductComponentOnTap extends StatelessWidget {
         extra: product.id,
       ),
       borderRadius: AppConsts.radius25,
-      child: ProductComponent(
-        product: product,
-      ),
+      child: ProductComponent(productModel: product),
     );
   }
 }

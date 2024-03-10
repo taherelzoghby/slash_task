@@ -15,7 +15,10 @@ abstract class StringsEn {
   static const String perfixColor = '0xFF';
   static const String description = 'Discription';
   static const String addToCart = 'Add To Cart';
-  static const String egp ='EGP';
+  static const String egp = 'EGP';
+  static const String someThingError = 'SomeThing Error';
+  static const String size ='Size';
+  static const String materials ='Materials';
 }
 
 ///strings by arabic

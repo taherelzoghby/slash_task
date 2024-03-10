@@ -1,5 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:dartz/dartz.dart';
+import 'package:equatable/equatable.dart';
 import 'package:meta/meta.dart';
 import 'package:slash_task/core/errors/failure_message.dart';
 import 'package:slash_task/core/models/product_model/product_model.dart';
@@ -12,6 +13,7 @@ class GetProductCubit extends Cubit<GetProductState> {
   final DetailsRepo detailsRepo;
 
   GetProductCubit(this.detailsRepo) : super(GetProductInitial());
+  ProductModel productModel = ProductModel();
 
   getProduct(int id) async {
     emit(GetProductLoading());
@@ -22,9 +24,10 @@ class GetProductCubit extends Cubit<GetProductState> {
       (failure) => emit(
         GetProductFailure(message: failure.message),
       ),
-      (product) => emit(
-        GetProductLoaded(productModel: product),
-      ),
+      (product) {
+        productModel = product;
+        emit(GetProductLoaded(productModel: productModel));
+      },
     );
   }
 }

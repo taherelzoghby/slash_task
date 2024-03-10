@@ -10,7 +10,7 @@ class ItemImageIndicator extends StatelessWidget {
     this.onTap,
   });
 
-  final String image;
+  final String? image;
   final bool isActive;
   final void Function()? onTap;
 
@@ -34,7 +34,7 @@ class ItemImageIndicator extends StatelessWidget {
           ),
           child: ClipRRect(
             borderRadius: AppConsts.radius8,
-            child: HandleImageWidget(image: image),
+            child: HandleImageWidget(image: image??''),
           ),
         ),
       ),

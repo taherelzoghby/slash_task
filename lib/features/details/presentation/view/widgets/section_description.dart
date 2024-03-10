@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import '../../../../../core/consts/style.dart';
 
 import 'description_bar.dart';
-import 'section_disc_bloc_consumer.dart';
+import 'section_disc_bloc_builder.dart';
 
 class SectionDescription extends StatelessWidget {
   const SectionDescription({super.key});
@@ -19,7 +19,7 @@ class SectionDescription extends StatelessWidget {
         child: Column(
           children: [
             DescriptionBar(),
-            SectionDiscBlocConsumer(),
+            SectionDiscBlocBuilder(),
           ],
         ),
       ),

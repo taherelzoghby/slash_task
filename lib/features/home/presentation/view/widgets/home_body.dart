@@ -21,14 +21,14 @@ class HomeBody extends StatefulWidget {
 }
 
 class _HomeBodyState extends State<HomeBody> {
-  List<ProductModel> products = [];
+  List<ProductModel> productsList = [];
 
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<GetProductsCubit, GetProductsState>(
       listener: (context, state) {
         if (state is GetProductsLoaded) {
-          products.addAll(state.products);
+          productsList.addAll(state.products);
         } else if (state is GetProductsErrorPagination) {
           showSnack(
             context,
@@ -40,8 +40,8 @@ class _HomeBodyState extends State<HomeBody> {
       builder: (context, state) {
         if (state is GetProductsLoaded ||
             state is GetProductsLoadingPagination ||
-            state is GetProductsError) {
-          return ProductsGridView(products: products);
+            state is GetProductsErrorPagination) {
+          return ProductsGridView(listOfProducts: productsList);
         } else if (state is GetProductsError) {
           return ErrorWidg(message: state.message);
         } else {

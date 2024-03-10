@@ -10,7 +10,7 @@ class ProductPropertiesValues {
 
   ProductPropertiesValues({this.value, this.property});
 
-  ProductPropertiesValues.fromJson(Map<String, dynamic> json) {
+  ProductPropertiesValues.fromMap(Map<String, dynamic> json) {
     value = json['value'] ?? '';
     property = json['property'] ?? '';
   }

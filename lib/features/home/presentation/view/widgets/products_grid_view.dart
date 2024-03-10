@@ -10,10 +10,10 @@ import 'product_component_ontap.dart';
 class ProductsGridView extends StatefulWidget {
   const ProductsGridView({
     super.key,
-    required this.products,
+    required this.listOfProducts,
   });
 
-  final List<ProductModel> products;
+  final List<ProductModel> listOfProducts;
 
   @override
   State<ProductsGridView> createState() => _ProductsGridViewState();
@@ -51,7 +51,7 @@ class _ProductsGridViewState extends State<ProductsGridView> {
       child: GridView.builder(
         controller: scrollController,
         gridDelegate: AppConsts.gridStyle,
-        itemCount: widget.products.length,
+        itemCount: widget.listOfProducts.length,
         itemBuilder: (context, index) {
           return AnimationConfiguration.staggeredGrid(
             position: index,
@@ -60,7 +60,7 @@ class _ProductsGridViewState extends State<ProductsGridView> {
             child: ScaleAnimation(
               child: FadeInAnimation(
                 child: ProductComponentOnTap(
-                  product: widget.products[index],
+                  product: widget.listOfProducts[index],
                 ),
               ),
             ),

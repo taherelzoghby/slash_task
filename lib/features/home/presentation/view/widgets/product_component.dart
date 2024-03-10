@@ -11,10 +11,10 @@ import 'section_price_favourite_shopping.dart';
 class ProductComponent extends StatelessWidget {
   const ProductComponent({
     super.key,
-    required this.product,
+    required this.productModel,
   });
 
-  final ProductModel product;
+  final ProductModel productModel;
 
   @override
   Widget build(BuildContext context) {
@@ -27,19 +27,19 @@ class ProductComponent extends StatelessWidget {
             flex: 50,
             child: CustomProductImage(
               width: size.width,
-              image: product
-                  .productVariations![0].productVarientImages![0].imagePath!,
+              image: productModel
+                  .variations![0].productVarientImages![0].imagePath!,
             ),
           ),
           const Spacer(),
           Expanded(
-            flex:15,
-            child: SectionNameProduct(product: product),
+            flex: 15,
+            child: SectionNameProduct(product: productModel),
           ),
           Expanded(
             flex: 7,
             child: SectionPriceFavouriteShopping(
-              product: product,
+              product: productModel,
             ),
           ),
         ],

@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
-import '../../../../../core/consts/data.dart';
+import 'package:slash_task/core/models/product_model/product_model.dart';
 import '../../../../../core/consts/style.dart';
 
 class SectionBrand extends StatelessWidget {
-  const SectionBrand({super.key});
+  const SectionBrand({
+    super.key,
+    required this.productModel,
+  });
+
+  final ProductModel productModel;
 
   @override
   Widget build(BuildContext context) {
@@ -13,11 +18,11 @@ class SectionBrand extends StatelessWidget {
         CircleAvatar(
           radius: size.height * .04,
           backgroundColor: AppConsts.white,
-          foregroundImage: NetworkImage(images[0]),
+          foregroundImage: NetworkImage(productModel.brandImage!),
         ),
         SizedBox(height: size.height * .01),
         Text(
-          'Libra sports',
+          productModel.brandName!,
           style: AppConsts.style17w600,
           overflow: TextOverflow.ellipsis,
         )

@@ -11,7 +11,7 @@ class AvailablePropertiesModel {
     values = json['values'] == null
         ? []
         : List<Values>.from(
-            (json['values'] as List<Map<String, dynamic>>).map(
+            (json['values'] as List).map(
               (e) => Values.fromJson(e),
             ),
           );

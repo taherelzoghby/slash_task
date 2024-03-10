@@ -21,6 +21,7 @@ class ErrorWidg extends StatelessWidget {
           ),
           Text(
             message,
+            textAlign: TextAlign.center,
           ),
         ],
       ),

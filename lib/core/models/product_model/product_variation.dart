@@ -46,7 +46,7 @@ class ProductVariation {
       deletedAt: (data['deletedAt'] as dynamic) ?? '',
       productPropertiesValues: data['productPropertiesValues'] != null
           ? List<ProductPropertiesValues>.from(
-              (data['productPropertiesValues'] as List<Map<String, dynamic>>)
+              (data['productPropertiesValues'] as List)
                   .map(
                 (e) => ProductPropertiesValues.fromJson(e),
               ),
@@ -68,7 +68,7 @@ class ProductVariation {
       productVarientImages: data['ProductVarientImages'] == null
           ? []
           : List<ProductVarientImage>.from(
-              (data['ProductVarientImages'] as List<Map<String, dynamic>>).map(
+              (data['ProductVarientImages'] as List).map(
                 (e) => ProductVarientImage.fromMap(e),
               ),
             ),

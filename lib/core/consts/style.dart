@@ -8,6 +8,7 @@ abstract class AppConsts {
   static const Color greyBlackLightColor = Color.fromRGBO(155, 155, 155, 1);
   static const Color greyBlackVeryLightColor = Color.fromRGBO(232, 232, 232, 1);
   static const Color white = Colors.white;
+  static const Color red = Colors.red;
   static const Color success = Color.fromRGBO(143, 220, 96, 1);
 
   //aspect ratio

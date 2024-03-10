@@ -1,40 +1,69 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
+import 'package:slash_task/core/helper/custom_snack.dart';
+import 'package:slash_task/core/widgets/empty_item.dart';
+import 'package:slash_task/core/widgets/error_widget.dart';
+import 'package:slash_task/core/widgets/fade_animation_widget.dart';
+import 'package:slash_task/core/widgets/fading_grid_view.dart';
+import 'package:slash_task/features/home/presentation/view_model/get_products_cubit/get_products_cubit.dart';
 
 import '../../../../../core/consts/style.dart';
 import 'product_component_ontap.dart';
 
-class HomeBody extends StatelessWidget {
+class HomeBody extends StatefulWidget {
   const HomeBody({super.key});
 
   @override
+  State<HomeBody> createState() => _HomeBodyState();
+}
+
+class _HomeBodyState extends State<HomeBody> {
+  @override
   Widget build(BuildContext context) {
-    // return const FadeAnimation(
-    //   millSeconds: 300,
-    //   child: FadingGridView(
-    //     scrollDirc: Axis.vertical,
-    //     widget: EmptyItem(),
-    //   ),
-    // );
-    return AnimationLimiter(
-      child: GridView.builder(
-        gridDelegate: AppConsts.gridStyle,
-        itemCount: 20,
-        itemBuilder: (context, index) {
-          return AnimationConfiguration.staggeredGrid(
-            position: index,
-            duration: const Duration(milliseconds: 575),
-            columnCount: 2,
-            child: const ScaleAnimation(
-              child: FadeInAnimation(
-                child: ProductComponentOnTap(),
-              ),
+    return BlocConsumer<GetProductsCubit, GetProductsState>(
+      listener: (context, state) {
+        if (state is GetProductsErrorPagination) {
+          showSnack(
+            context,
+            message: state.message,
+            background: AppConsts.red,
+          );
+        }
+      },
+      builder: (context, state) {
+        if (state is GetProductsLoaded) {
+          return AnimationLimiter(
+            child: GridView.builder(
+              gridDelegate: AppConsts.gridStyle,
+              itemCount: 20,
+              itemBuilder: (context, index) {
+                return AnimationConfiguration.staggeredGrid(
+                  position: index,
+                  duration: const Duration(milliseconds: 575),
+                  columnCount: 2,
+                  child: const ScaleAnimation(
+                    child: FadeInAnimation(
+                      child: ProductComponentOnTap(),
+                    ),
+                  ),
+                );
+              },
             ),
           );
-        },
-      ),
+        } else if (state is GetProductsError) {
+          return ErrorWidg(message: state.message);
+        } else {
+          return const FadingAnimation(
+            child: FadingGridView(
+              scrollDirc: Axis.vertical,
+              widget: EmptyItem(),
+            ),
+          );
+        }
+      },
     );
   }
 }

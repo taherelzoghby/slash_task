@@ -21,4 +21,8 @@ class GetProductsError extends GetProductsState {
 
 class GetProductsLoadingPagination extends GetProductsState {}
 
-class GetProductsErrorPagination extends GetProductsState {}
+class GetProductsErrorPagination extends GetProductsState {
+  final String message;
+
+  GetProductsErrorPagination({required this.message});
+}

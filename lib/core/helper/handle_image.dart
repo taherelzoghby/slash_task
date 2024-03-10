@@ -1,6 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:slash_task/core/consts/style.dart';
 
 import '../consts/strings.dart';
 import '../widgets/loading_widget.dart';
@@ -17,7 +18,10 @@ class HandleImageWidget extends StatelessWidget {
       case 'jpg' || 'png':
         return Image.asset(image);
       case 'svg':
-        return SvgPicture.asset(image);
+        return SvgPicture.asset(
+          image,
+          color: AppConsts.red,
+        );
       case 'network':
         return CachedNetworkImage(
           imageUrl: image,

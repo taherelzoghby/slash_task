@@ -26,7 +26,7 @@ final router = GoRouter(
             HomeReoImpl(
               apiService: ApiService(dio: Dio()),
             ),
-          ),
+          )..getProducts(),
           child: const HomeView(),
         ),
       ),

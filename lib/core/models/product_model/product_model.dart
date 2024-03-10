@@ -55,7 +55,7 @@ class ProductModel {
       bostaSizeId: (data['bosta_size_id'] as dynamic) ?? '',
       availableProperties: data['avaiableProperties'] != null
           ? List<AvailablePropertiesModel>.from(
-              (data['avaiableProperties'] as List<Map<String, dynamic>>).map(
+              (data['avaiableProperties'] as List).map(
                 (e) => AvailablePropertiesModel.fromJson(e),
               ),
             )
@@ -75,7 +75,7 @@ class ProductModel {
       productVariations: data['ProductVariations'] == null
           ? []
           : List<ProductVariation>.from(
-              (data['ProductVariations'] as List<Map<String, dynamic>>).map(
+              (data['ProductVariations'] as List).map(
                 (e) => ProductVariation.fromMap(e),
               ),
             ),

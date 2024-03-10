@@ -23,7 +23,7 @@ class FadingGridView extends StatelessWidget {
         shrinkWrap: true,
         scrollDirection: scrollDirc,
         gridDelegate: AppConsts.gridStyle,
-        itemCount: 5,
+        itemCount: 6,
         physics: isNeverScroll
             ? const NeverScrollableScrollPhysics()
             : const BouncingScrollPhysics(),

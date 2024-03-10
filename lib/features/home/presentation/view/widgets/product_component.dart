@@ -1,5 +1,7 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:slash_task/core/models/product_model/product_model.dart';
 
 import '../../../../../core/consts/style.dart';
 import 'custom_product_image.dart';
@@ -7,21 +9,39 @@ import 'section_name_product.dart';
 import 'section_price_favourite_shopping.dart';
 
 class ProductComponent extends StatelessWidget {
-  const ProductComponent({super.key});
+  const ProductComponent({
+    super.key,
+    required this.product,
+  });
+
+  final ProductModel product;
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.sizeOf(context);
     return Padding(
       padding: AppConsts.padding10h8v,
       child: Column(
         children: [
-          const CustomProductImage(
-            image:
-                'https://octopuscairo.com/cdn/shop/products/DSC04364-2MB_1024x1024.jpg?v=1661639844',
+          Expanded(
+            flex: 50,
+            child: CustomProductImage(
+              width: size.width,
+              image: product
+                  .productVariations![0].productVarientImages![0].imagePath!,
+            ),
           ),
-          SizedBox(height: MediaQuery.sizeOf(context).height * .002),
-          const SectionNameProduct(),
-          const SectionPriceFavouriteShopping(),
+          const Spacer(),
+          Expanded(
+            flex:15,
+            child: SectionNameProduct(product: product),
+          ),
+          Expanded(
+            flex: 7,
+            child: SectionPriceFavouriteShopping(
+              product: product,
+            ),
+          ),
         ],
       ),
     );

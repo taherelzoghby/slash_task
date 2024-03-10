@@ -101,8 +101,8 @@ abstract class AppConsts {
       SliverGridDelegateWithFixedCrossAxisCount(
     crossAxisCount: 2,
     crossAxisSpacing: 30,
-    mainAxisSpacing: 40,
-    childAspectRatio: 1.95 / 3,
+    mainAxisSpacing: 30,
+    childAspectRatio: 2.2 / 3,
   );
 
   //

@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:slash_task/features/home/presentation/view/widgets/home_body_bloc_consumer.dart';
 import 'package:slash_task/features/home/presentation/view_model/get_products_cubit/get_products_cubit.dart';
 import '../../../../core/consts/strings.dart';
 import '../../../../core/consts/style.dart';
-
-import 'widgets/home_body.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({super.key});
@@ -33,7 +32,7 @@ class _HomeViewState extends State<HomeView> {
         centerTitle: true,
       ),
       body: const SafeArea(
-        child: HomeBody(),
+        child: HomeBodyBlocConsumer(),
       ),
     );
   }

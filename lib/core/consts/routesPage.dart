@@ -11,6 +11,7 @@ import 'package:slash_task/features/details/presentation/view_model/get_images_s
 import 'package:slash_task/features/details/presentation/view_model/get_product_cubit/get_product_cubit.dart';
 import 'package:slash_task/features/home/data/repos/home_repo_impl.dart';
 import 'package:slash_task/features/home/presentation/view_model/get_products_cubit/get_products_cubit.dart';
+import 'package:slash_task/features/splash/presentation/view/splash_view.dart';
 import '../../features/details/presentation/view/details_view.dart';
 import '../../features/details/presentation/view_model/arrow_cubit/arrow_disc_cubit.dart';
 import '../../features/details/presentation/view_model/change_color_cubit/change_color_or_image_cubit.dart';
@@ -20,10 +21,19 @@ import '../../features/details/presentation/view_model/change_size_cubit/change_
 import '../../features/home/presentation/view/home_view.dart';
 import '../helper/custom_animation.dart';
 
-const homePath = '/';
+const splashPath = '/';
+const homePath = '/home';
 const detailsPath = '/detailsPage';
 final router = GoRouter(
   routes: [
+    GoRoute(
+      path: splashPath,
+      pageBuilder: (context, state) => buildPageWithDefaultTransition(
+        context: context,
+        state: state,
+        child: const SplashView(),
+      ),
+    ),
     GoRoute(
       path: homePath,
       pageBuilder: (context, state) => buildPageWithDefaultTransition(

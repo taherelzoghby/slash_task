@@ -37,7 +37,7 @@ class ProductComponent extends StatelessWidget {
             child: SectionNameProduct(product: productModel),
           ),
           Expanded(
-            flex: 7,
+            flex: 13,
             child: SectionPriceFavouriteShopping(
               product: productModel,
             ),

@@ -1,6 +1,5 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:slash_task/core/services/hive_db.dart';
 import 'package:slash_task/core/services/service_locator.dart';
 import 'core/consts/strings.dart';
@@ -28,9 +27,6 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData.dark().copyWith(
         scaffoldBackgroundColor: AppConsts.backGroundColor,
-        textTheme: GoogleFonts.montserratTextTheme(
-          ThemeData.dark().textTheme,
-        ),
       ),
     );
   }

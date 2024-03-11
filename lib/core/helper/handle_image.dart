@@ -28,10 +28,16 @@ class HandleImageWidget extends StatelessWidget {
           progressIndicatorBuilder:
               (context, String data, DownloadProgress pr) =>
                   const LoadingWidget(),
-          errorWidget: (context, url, error) => const Icon(Icons.error),
+          errorWidget: (context, url, error) => const Icon(
+            Icons.error,
+            color: AppConsts.backGroundColor,
+          ),
         );
       default:
-        return const Icon(Icons.error);
+        return const Icon(
+          Icons.error,
+          color: AppConsts.backGroundColor,
+        );
     }
   }
 }

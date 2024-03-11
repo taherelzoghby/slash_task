@@ -18,7 +18,11 @@ class SectionBrand extends StatelessWidget {
         CircleAvatar(
           radius: size.height * .04,
           backgroundColor: AppConsts.white,
-          foregroundImage: NetworkImage(productModel.brandImage!),
+          backgroundImage: NetworkImage(productModel.brandImage!),
+          onBackgroundImageError: (v, c) => const Icon(
+            Icons.error,
+            color: AppConsts.backGroundColor,
+          ),
         ),
         SizedBox(height: size.height * .01),
         Text(

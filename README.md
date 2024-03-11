@@ -13,6 +13,6 @@ State management: Bloc.<br>
 Architecture Pattern : MVVM <br>
 Design Pattern : repository patterns<br>
 Local database: Hive,shared prefernces.<br> 
-Remote data source : Api <br>
+Remote database : Api <br>
 ## Setup
 install all packages by flutter pub get .

@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:slash_task/core/models/product_model/product_model.dart';
 import '../../../../../core/consts/style.dart';
@@ -23,12 +24,12 @@ class SectionNameProduct extends StatelessWidget {
           ),
         ),
         Expanded(
-          child: Center(
-            child: Container(
-              decoration: AppConsts.decorationCircleImage,
-              child: CustomProductImage(
-                image: product.brands!.brandLogoImagePath!,
-              ),
+          child: CircleAvatar(
+            backgroundColor: AppConsts.white,
+            backgroundImage: NetworkImage(product.brands!.brandLogoImagePath!),
+            onBackgroundImageError: (v, c) => const Icon(
+              Icons.error,
+              color: AppConsts.backGroundColor,
             ),
           ),
         ),

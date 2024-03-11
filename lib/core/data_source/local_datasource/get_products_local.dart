@@ -20,6 +20,6 @@ class GetProductsLocalImpl extends GetProductsLocal {
       return [];
     }
 
-    return products.sublist(start, end);
+    return products.sublist(start, end).toList();
   }
 }

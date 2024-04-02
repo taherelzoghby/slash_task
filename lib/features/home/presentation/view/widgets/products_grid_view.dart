@@ -46,6 +46,12 @@ class _ProductsGridViewState extends State<ProductsGridView> {
   }
 
   @override
+  void dispose() {
+    scrollController.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return AnimationLimiter(
       child: GridView.builder(
